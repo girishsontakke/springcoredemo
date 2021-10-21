@@ -1,0 +1,3 @@
+"this is first fortune"
+"this one is second fortune"
+"this is a thirst fortune"

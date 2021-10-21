@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+             http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+
+    >
+
+    <!-- define property-placeholders -->
+    <context:property-placeholder location="classpath:sport.properties"/>
+
+    <!-- Define beans  -->
+    <!--
+    <bean id="myCoach" class="com.girish.springIOCandDIWithXML.CricketCoach" >
+        // constructor injection
+         <constructor-arg ref="fortune" />
+     </bean>
+   -->
+
+    <bean id="fortune" class="com.girish.springIOCandDIWithXML.RandomFortune "/>
+
+    <!-- scope - (options)
+                    - singleton
+                    - prototype
+                    - request
+                    - session
+                    -global-session
+        init-method -> runs after instantiation of the bean
+        destroy-method -> runs after closing the context by context.close()
+     -->
+    <bean id="myCoach"
+          class="com.girish.springIOCandDIWithXML.TrackCoach"
+          init-method="doMyStartupStuff"
+          destroy-method="doMyCleanupStuff"
+          scope="singleton"
+    >
+        <!-- setter injection -->
+        <property name="fortuneProvider" ref="fortune"/>
+        <property name="email" value="${foo.email}"/>
+        <property name="team" value="${foo.team}"/>
+    </bean>
+</beans>
