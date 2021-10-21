@@ -9,6 +9,11 @@
         <fileset id="fileset2" name="AnnotationContext" removed="false">
           <file>file://$MODULE_DIR$/src/annotationContext.xml</file>
         </fileset>
+        <fileset id="fileset3" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/src/com/girish/configurationWithJavaAlone/ComplexConfig.java</file>
+          <file>file://$MODULE_DIR$/src/com/girish/configurationWithJavaAlone/ExerciseConfig.java</file>
+          <file>file://$MODULE_DIR$/src/com/girish/configurationWithJavaAlone/SimpleConfig.java</file>
+        </fileset>
       </configuration>
     </facet>
   </component>
